@@ -21,6 +21,7 @@ public class AI : MonoBehaviour
     private float distanceToPlayer;
 
     public float distanceToFollowPlayer = 10;
+    public Animator anim;
 
 
     void Start()
@@ -32,7 +33,7 @@ public class AI : MonoBehaviour
         else
         {
             navMeshAgent.destination = destinations[0].transform.position;
-            player = FindObjectOfType<PlayerMovement>().gameObject;
+            player = FindObjectOfType<Player>().gameObject;
         }
     }
     void Update()
@@ -41,10 +42,12 @@ public class AI : MonoBehaviour
         if (distanceToPlayer <= distanceToFollowPlayer && followPlayer)
         {
             FollowPlayer();
+           
         }
         else
         {
             EnemyPad();
+            
         }
     }
     public void EnemyPad()
@@ -65,5 +68,6 @@ public class AI : MonoBehaviour
     public void FollowPlayer()
     {
         navMeshAgent.destination = player.transform.position;
+        
     }
 }
