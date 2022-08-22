@@ -5,24 +5,75 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Animator anim;
-    public int healt = 50;
-    int currentHealt;
+    public float timer;
+    public int routine;
+    public Quaternion angle;
+    public float grade;
+    public GameObject target;
+    public bool attacking;
     void Start()
     {
-        currentHealt = healt;
+        anim = GetComponent<Animator>();
+        target = GameObject.Find("Player");
+    }
+    private void Update()
+    {
+        EnemyRoutine();
     }
 
-    public void Damage(int damage)
+    public void EnemyRoutine()
     {
-        currentHealt -= damage;
-        if(currentHealt <= 0)
+        if (Vector3.Distance(transform.position, target.transform.position) > 15)
         {
-            Die();
+            timer += 1 - Time.deltaTime;
+            if (timer >= 3)
+            {
+                routine = Random.Range(0, 30);
+                timer = 0;
+            }
+            switch (routine)
+            {
+                case 0:
+                    anim.SetBool("Run", false);
+                    break;
+                case 1:
+                    grade = Random.Range(0, 360);
+                    angle = Quaternion.Euler(0, grade, 0);
+                    routine++;
+                    break;
+                case 2:
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, 0.5f);
+                    transform.Translate(Vector3.forward * 1 * Time.deltaTime);
+                    anim.SetBool("Run", true);
+                    break;
+            }          
         }
+        else
+        {
+            if(Vector3.Distance(transform.position, target.transform.position)>1 && !attacking)
+            {
+                var lookPos = target.transform.position - transform.position;
+                lookPos.y = 0;
+                var rotation = Quaternion.LookRotation(lookPos);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 3);
+                anim.SetBool("Run", true);
+                transform.Translate(Vector3.forward * 2 * Time.deltaTime);
+                anim.SetBool("Attack", false);
+            }
+            else
+            {
+                anim.SetBool("Run", false);
+                anim.SetBool("Attack", true);
+                attacking = true;
+            }
+            
+        }
+
     }
-    void Die()
+    public void FinalAnim()
     {
-        anim.SetBool("Death", true);
-        Destroy(this);
+        anim.SetBool("Attack", false);
+        attacking = false;
     }
+
 }

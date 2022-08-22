@@ -10,27 +10,21 @@ public class Player : MonoBehaviour
 
     //attack
     public Transform attackPoint;
-    public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
     public int attackDamage = 50;
-    float attackRate = 1.5f;
-    float nextAttack = 0f;
+    public GameObject ball;
+    public float shotForce = 1500f;
+    public int health = 100;
+    public int score = 0;
+
     void Start()
     {
         
     }
     void Update()
     {
-        nextAttack -= Time.deltaTime;
-        if (nextAttack <= 0)
-        {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                Attack();
-                nextAttack = attackRate;
-            }
-        }
-        Movement();      
+        AttackAnim();
+        Movement();
+        Death();
     }
     void Movement()
     {
@@ -50,22 +44,37 @@ public class Player : MonoBehaviour
         }
 
     }
-    void Attack()
+    void AttackAnim()
     {
-        //play the animation
-        anim.SetTrigger("Attack");
-        //detect enemies in range attack
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position,attackRange,enemyLayers);
-        //Damage
-        foreach(Collider enemy in hitEnemies)
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            enemy.GetComponent<Enemy>().Damage(attackDamage);
+            anim.SetBool("Attack", true);
+        }
+        else
+        {
+            anim.SetBool("Attack", false);
+        }
+       
+    }
+    public void Attack()
+    {
+        GameObject newBall;
+        newBall = Instantiate(ball, attackPoint.position, attackPoint.rotation);
+        newBall.GetComponent<Rigidbody>().AddForce(attackPoint.forward * shotForce);
+        Destroy(newBall, 3);
+    }
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("Sword"))
+        {
+            health -= 30;
         }
     }
-    private void OnDrawGizmosSelected()
+    void Death()
     {
-        if (attackPoint == null)
-            return;
-        Gizmos.DrawWireSphere(attackPoint.position,attackRange);
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
