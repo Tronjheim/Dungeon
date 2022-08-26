@@ -8,6 +8,7 @@ TagManager:
   - Ladder
   - Sword
   - Ball
+  - Box
   layers:
   - Default
   - TransparentFX

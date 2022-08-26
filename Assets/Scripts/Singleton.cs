@@ -8,7 +8,7 @@ public class Singleton : MonoBehaviour
   
     private void OnTriggerEnter(Collider col)
     {
-        if (col.transform.gameObject.tag == "Ladder")
+        if (col.transform.gameObject.CompareTag ("Ladder"))
         {
             SceneManager.LoadScene(2);
         }

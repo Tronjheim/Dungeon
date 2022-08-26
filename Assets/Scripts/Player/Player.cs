@@ -69,6 +69,18 @@ public class Player : MonoBehaviour
         {
             health -= 30;
         }
+        else if(col.CompareTag("Box"))
+        {
+            if(health < 70)
+            {
+                health = 100;
+            }
+            else
+            {
+                score += 50;
+                Debug.Log(score);
+            }
+        }
     }
     void Death()
     {
@@ -77,4 +89,5 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }
