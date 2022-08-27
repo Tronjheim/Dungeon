@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
         GameObject newBall;
         newBall = Instantiate(ball, attackPoint.position, attackPoint.rotation);
         newBall.GetComponent<Rigidbody>().AddForce(attackPoint.forward * shotForce);
-        Destroy(newBall, 3);
+        Destroy(newBall, 1);
     }
     private void OnTriggerEnter(Collider col)
     {
@@ -74,12 +74,14 @@ public class Player : MonoBehaviour
             if(health < 70)
             {
                 health = 100;
+                Debug.Log(health + "Salud");
             }
             else
             {
-                score += 50;
+                ScoreManager.Instance.score += 50;
                 Debug.Log(score);
             }
+            Destroy(col.gameObject);
         }
     }
     void Death()

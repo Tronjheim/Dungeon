@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             Destroy(col.gameObject);
+            Destroy(gameObject);
             ScoreManager.Instance.score += 100;
             Debug.Log(ScoreManager.Instance.score);
         }
