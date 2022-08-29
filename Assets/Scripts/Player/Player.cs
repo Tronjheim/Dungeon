@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class Player : MonoBehaviour
     public int attackDamage = 50;
     public GameObject ball;
     public float shotForce = 1500f;
-    public int health = 100;
+    public static int health = 100;
     public int score = 0;
 
     void Start()
@@ -67,19 +68,17 @@ public class Player : MonoBehaviour
     {
         if (col.CompareTag("Sword"))
         {
-            health -= 30;
+            health -= 25;
         }
         else if(col.CompareTag("Box"))
         {
             if(health < 70)
             {
                 health = 100;
-                Debug.Log(health + "Salud");
             }
             else
             {
                 ScoreManager.Instance.score += 50;
-                Debug.Log(score);
             }
             Destroy(col.gameObject);
         }
@@ -88,8 +87,9 @@ public class Player : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene(0);
         }
+        
     }
 
 }

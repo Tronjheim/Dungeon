@@ -5,14 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Singleton : MonoBehaviour
 {
-  
     private void OnTriggerEnter(Collider col)
     {
         if (col.tag=="Ladder")
         {
             SceneManager.LoadScene(2);
-            Debug.Log("as");
         }
-    }
-    
+    }  
 }
