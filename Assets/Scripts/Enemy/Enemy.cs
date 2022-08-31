@@ -11,10 +11,16 @@ public class Enemy : MonoBehaviour
     public float grade;
     public GameObject target;
     public bool attacking;
+    static public int maxHealth = 20;
+    static public int currentHealth;
+
+    public HealthBar healthBar;//
     void Start()
     {
         anim = GetComponent<Animator>();
         target = GameObject.Find("Player");
+      //  currentHealth = maxHealth;
+       // healthBar.SetMaxHealth(maxHealth);
     }
     private void Update()
     {
@@ -75,5 +81,4 @@ public class Enemy : MonoBehaviour
         anim.SetBool("Attack", false);
         attacking = false;
     }
-
 }

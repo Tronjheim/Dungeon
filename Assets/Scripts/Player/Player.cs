@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public GameObject ball;
     public float shotForce = 1500f;
     public static int health = 100;
-    public int score = 0;
+    public int score= 0;
 
     void Start()
     {
@@ -38,6 +38,7 @@ public class Player : MonoBehaviour
         if ((inputX != Vector3.zero) || inputY != Vector3.zero)
         {
             anim.SetBool("Run", true);
+            FindObjectOfType<ManagerSounds>().Play("Steps");
         }
         else
         {
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             anim.SetBool("Attack", true);
+            FindObjectOfType<ManagerSounds>().Play("Magic");
         }
         else
         {
@@ -87,7 +89,7 @@ public class Player : MonoBehaviour
     {
         if (health <= 0)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(4);
         }
         
     }
