@@ -11,5 +11,9 @@ public class Singleton : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+        else if (col.tag == "Door")
+        {
+            SceneManager.LoadScene(3);
+        }
     }  
 }

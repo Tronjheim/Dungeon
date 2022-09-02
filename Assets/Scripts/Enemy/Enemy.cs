@@ -20,7 +20,8 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         target = GameObject.Find("Player");
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);// este me decias que no iba aca sino solo en el script de ball?
+       // healthBar.SetMaxHealth(maxHealth);// este me decias que no iba aca sino solo en el script de ball?
+        healthBar = GetComponent<HealthBar>();
     }
     private void Update()
     {
@@ -83,11 +84,7 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage()// Esta funcion tendria que estar en el script ball?
     {
-        maxHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-        if (currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
+        currentHealth -= damage;
+       // healthBar.SetHealth(currentHealth);
     }
 }

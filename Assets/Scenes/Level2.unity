@@ -152,6 +152,10 @@ MonoBehaviour:
   grade: 0
   target: {fileID: 0}
   attacking: 0
+  maxHealth: 20
+  currentHealth: 0
+  damage: 20
+  healthBar: {fileID: 0}
 --- !u!65 &14862850
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2313,52 +2317,6 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: c360da38927a5ef4b83f89c095a8cf7e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
---- !u!1 &103110142
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 103110144}
-  - component: {fileID: 103110143}
-  m_Layer: 0
-  m_Name: ScoreManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &103110143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103110142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 591ef60d040518a4ba54d72715290622, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  scoreText: {fileID: 1836947998}
---- !u!4 &103110144
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103110142}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1496053, y: 4.6983914, z: -55.866947}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &112367418
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2408,7 +2366,7 @@ RectTransform:
   - {fileID: 857220732}
   - {fileID: 1836947997}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8702,6 +8660,10 @@ MonoBehaviour:
   grade: 0
   target: {fileID: 0}
   attacking: 0
+  maxHealth: 20
+  currentHealth: 0
+  damage: 20
+  healthBar: {fileID: 0}
 --- !u!65 &707500778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8760,6 +8722,10 @@ MonoBehaviour:
   grade: 0
   target: {fileID: 0}
   attacking: 0
+  maxHealth: 20
+  currentHealth: 0
+  damage: 20
+  healthBar: {fileID: 0}
 --- !u!65 &712227980
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9532,7 +9498,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &857220731
 GameObject:
@@ -10640,6 +10606,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956312670}
   m_Mesh: {fileID: 4300000, guid: 9889117518dff7b42806ad82249545f8, type: 3}
+--- !u!1 &964440776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 964440778}
+  - component: {fileID: 964440777}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &964440777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964440776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591ef60d040518a4ba54d72715290622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 0}
+--- !u!4 &964440778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964440776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.1496053, y: 4.6983914, z: -55.866947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1019523959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13477,6 +13489,10 @@ MonoBehaviour:
   grade: 0
   target: {fileID: 0}
   attacking: 0
+  maxHealth: 20
+  currentHealth: 0
+  damage: 20
+  healthBar: {fileID: 0}
 --- !u!65 &1105766416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17012,6 +17028,10 @@ MonoBehaviour:
   grade: 0
   target: {fileID: 0}
   attacking: 0
+  maxHealth: 20
+  currentHealth: 0
+  damage: 20
+  healthBar: {fileID: 0}
 --- !u!65 &1220374260
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18035,6 +18055,10 @@ MonoBehaviour:
   grade: 0
   target: {fileID: 0}
   attacking: 0
+  maxHealth: 20
+  currentHealth: 0
+  damage: 20
+  healthBar: {fileID: 0}
 --- !u!65 &1365329074
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18605,6 +18629,10 @@ MonoBehaviour:
   grade: 0
   target: {fileID: 0}
   attacking: 0
+  maxHealth: 20
+  currentHealth: 0
+  damage: 20
+  healthBar: {fileID: 0}
 --- !u!65 &1486828658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74912,9 +74940,11 @@ GameObject:
   - component: {fileID: 1239533232416887350}
   - component: {fileID: 1245994254848082690}
   - component: {fileID: 1254448406200554154}
+  - component: {fileID: 1254448406200554156}
+  - component: {fileID: 1254448406200554155}
   m_Layer: 0
   m_Name: obj_04
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -75090,6 +75120,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &1254448406200554155
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240744807877422182}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1254448406200554156
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240744807877422182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7802368, y: 6.171455, z: 6.474347}
+  m_Center: {x: -0.3141901, y: 3.0715911, z: 0.0038168435}
 --- !u!23 &1255822089785906128
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -97619,7 +97678,7 @@ GameObject:
   - component: {fileID: 4927432557685146161}
   m_Layer: 0
   m_Name: chest_base
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

@@ -16,11 +16,6 @@ public class Player : MonoBehaviour
     public float shotForce = 1500f;
     public static int health = 100;
     public int score= 0;
-
-    void Start()
-    {
-        
-    }
     void Update()
     {
         AttackAnim();
@@ -50,7 +45,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             anim.SetBool("Attack", true);
-            FindObjectOfType<ManagerSounds>().Play("Magic");
         }
         else
         {
@@ -89,12 +83,15 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             SceneManager.LoadScene(4);
-        }
-        
+        }      
     }
     public void PlaySteps()
     {
         FindObjectOfType<ManagerSounds>().Play("Steps");
+    }
+    public void PlayAttackSound()
+    {
+        FindObjectOfType<ManagerSounds>().Play("Magic");
     }
 
 }
