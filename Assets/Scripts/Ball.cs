@@ -4,31 +4,16 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public HealthBar healthBar;
-    int damage = 5;
-    private void Start()
-    {
-        Enemy.currentHealth = Enemy.maxHealth;
-        healthBar.SetMaxHealth(Enemy.maxHealth);
-    }
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Enemy"))
         {
-            TakeDamage();
+            /*aca tendria que chequear si la vida<=0 para destruirlo
+             aunque mi idea es que solo el boss tenga mas vida y los demas mueran de un solo disparo*/
             Destroy(gameObject);
-            if (Enemy.maxHealth <= 0)
-            {
-                Destroy(col.gameObject);
-                ScoreManager.Instance.score += 100;
-                Debug.Log(ScoreManager.Instance.score);
-            }
-            
+            Destroy(col.gameObject);
+            ScoreManager.Instance.score += 100;
+            Debug.Log(ScoreManager.Instance.score);
         }
-    }
-    void TakeDamage()
-    {
-        Enemy.maxHealth -= damage;
-        healthBar.SetHealth(Enemy.currentHealth);
     }
 }

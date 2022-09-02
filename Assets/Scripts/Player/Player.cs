@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
         if ((inputX != Vector3.zero) || inputY != Vector3.zero)
         {
             anim.SetBool("Run", true);
-            FindObjectOfType<ManagerSounds>().Play("Steps");
         }
         else
         {
@@ -92,6 +91,10 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(4);
         }
         
+    }
+    public void PlaySteps()
+    {
+        FindObjectOfType<ManagerSounds>().Play("Steps");
     }
 
 }
