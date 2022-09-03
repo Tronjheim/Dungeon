@@ -15,7 +15,6 @@ public class Player : MonoBehaviour
     public GameObject ball;
     public float shotForce = 1500f;
     public static int health = 100;
-    public int score= 0;
     void Update()
     {
         AttackAnim();

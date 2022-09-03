@@ -13,15 +13,18 @@ public class Enemy : MonoBehaviour
     public bool attacking;
     public int maxHealth = 20;
     public int currentHealth;
-    //public int damage = 20;
-    public HealthBar healthBar;// esta mal pero no lo saco para poder compilar
+    public int damage = 20;
+
+    public HealthBar healthBar;
     void Start()
     {
         anim = GetComponent<Animator>();
         target = GameObject.Find("Player");
         currentHealth = maxHealth;
-       // healthBar.SetMaxHealth(maxHealth);// este me decias que no iba aca sino solo en el script de ball?
-        healthBar = GetComponent<HealthBar>();
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(maxHealth);
+        }
     }
     private void Update()
     {
@@ -82,9 +85,17 @@ public class Enemy : MonoBehaviour
         anim.SetBool("Attack", false);
         attacking = false;
     }
-    /*public void TakeDamage()// Esta funcion tendria que estar en el script ball?
+    public void TakeDamage()
     {
         currentHealth -= damage;
-       // healthBar.SetHealth(currentHealth);
-    }*/
+        if(currentHealth < 0)
+        {
+            Destroy(gameObject);
+            ScoreManager.Instance.score += 100;
+        }
+        else if (healthBar != null)
+        {
+            healthBar.SetHealth(currentHealth);
+        }
+    }
 }

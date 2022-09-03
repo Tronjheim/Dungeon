@@ -154,7 +154,6 @@ MonoBehaviour:
   attacking: 0
   maxHealth: 20
   currentHealth: 0
-  damage: 20
   healthBar: {fileID: 0}
 --- !u!65 &14862850
 BoxCollider:
@@ -2342,6 +2341,7 @@ GameObject:
   - component: {fileID: 118067837}
   - component: {fileID: 118067836}
   - component: {fileID: 118067835}
+  - component: {fileID: 118067838}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -2434,6 +2434,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &118067838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118067833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760c001a771e03a40ba50f32b5ef48c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1836947998}
 --- !u!1 &124026695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3513,6 +3526,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245127184}
   m_Mesh: {fileID: 4300012, guid: 9889117518dff7b42806ad82249545f8, type: 3}
+--- !u!1 &255415703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 255415705}
+  - component: {fileID: 255415704}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &255415704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255415703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 591ef60d040518a4ba54d72715290622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 1836947998}
+--- !u!4 &255415705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255415703}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.1496053, y: 4.6983914, z: -55.866947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &264933863
 GameObject:
   m_ObjectHideFlags: 0
@@ -8662,7 +8721,6 @@ MonoBehaviour:
   attacking: 0
   maxHealth: 20
   currentHealth: 0
-  damage: 20
   healthBar: {fileID: 0}
 --- !u!65 &707500778
 BoxCollider:
@@ -8724,7 +8782,6 @@ MonoBehaviour:
   attacking: 0
   maxHealth: 20
   currentHealth: 0
-  damage: 20
   healthBar: {fileID: 0}
 --- !u!65 &712227980
 BoxCollider:
@@ -10606,52 +10663,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956312670}
   m_Mesh: {fileID: 4300000, guid: 9889117518dff7b42806ad82249545f8, type: 3}
---- !u!1 &964440776
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 964440778}
-  - component: {fileID: 964440777}
-  m_Layer: 0
-  m_Name: ScoreManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &964440777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964440776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 591ef60d040518a4ba54d72715290622, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  scoreText: {fileID: 0}
---- !u!4 &964440778
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964440776}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1496053, y: 4.6983914, z: -55.866947}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1019523959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11376,7 +11387,6 @@ MonoBehaviour:
   attackDamage: 50
   ball: {fileID: 8637168228039845548, guid: 8bcbf54e78422ff48bd556f982eaf229, type: 3}
   shotForce: 2000
-  score: 0
 --- !u!95 &1019523964
 Animator:
   serializedVersion: 4
@@ -13491,7 +13501,6 @@ MonoBehaviour:
   attacking: 0
   maxHealth: 20
   currentHealth: 0
-  damage: 20
   healthBar: {fileID: 0}
 --- !u!65 &1105766416
 BoxCollider:
@@ -17030,7 +17039,6 @@ MonoBehaviour:
   attacking: 0
   maxHealth: 20
   currentHealth: 0
-  damage: 20
   healthBar: {fileID: 0}
 --- !u!65 &1220374260
 BoxCollider:
@@ -18057,7 +18065,6 @@ MonoBehaviour:
   attacking: 0
   maxHealth: 20
   currentHealth: 0
-  damage: 20
   healthBar: {fileID: 0}
 --- !u!65 &1365329074
 BoxCollider:
@@ -18631,7 +18638,6 @@ MonoBehaviour:
   attacking: 0
   maxHealth: 20
   currentHealth: 0
-  damage: 20
   healthBar: {fileID: 0}
 --- !u!65 &1486828658
 BoxCollider:

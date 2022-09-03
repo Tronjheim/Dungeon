@@ -820,7 +820,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 235403018}
   healthBar: {fileID: 0}
-  boss: {fileID: 0}
 --- !u!1001 &244400631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1332,7 +1331,6 @@ MonoBehaviour:
   attackDamage: 50
   ball: {fileID: 8637168228039845548, guid: 8bcbf54e78422ff48bd556f982eaf229, type: 3}
   shotForce: 2000
-  score: 0
 --- !u!95 &458621069
 Animator:
   serializedVersion: 4
@@ -1528,6 +1526,7 @@ GameObject:
   - component: {fileID: 533361441}
   - component: {fileID: 533361440}
   - component: {fileID: 533361439}
+  - component: {fileID: 533361443}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -1620,6 +1619,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &533361443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533361438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760c001a771e03a40ba50f32b5ef48c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1055832326}
 --- !u!4 &549507718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 418198, guid: 393b236c42954a640b513d46de90ac38, type: 3}
@@ -5078,29 +5090,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 459816, guid: aae542b8a65f39b49b008fa689ce9804, type: 3}
   m_PrefabInstance: {fileID: 1409601193}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1547796443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148789077585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b71ad44548508e40be17bc5f65fdb0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1547796444}
-  timer: 0
-  routine: 0
-  angle: {x: 0, y: 0, z: 0, w: 0}
-  grade: 0
-  target: {fileID: 458621067}
-  attacking: 0
-  maxHealth: 20
-  currentHealth: 0
-  damage: 20
-  healthBar: {fileID: 235403019}
 --- !u!95 &1547796444
 Animator:
   serializedVersion: 4
@@ -6862,14 +6851,37 @@ GameObject:
   - component: {fileID: 1547796445}
   - component: {fileID: 1547796446}
   - component: {fileID: 1547796444}
-  - component: {fileID: 1547796443}
+  - component: {fileID: 919132148789077586}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148789077586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148789077585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b71ad44548508e40be17bc5f65fdb0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1547796444}
+  timer: 0
+  routine: 0
+  angle: {x: 0, y: 0, z: 0, w: 0}
+  grade: 0
+  target: {fileID: 458621067}
+  attacking: 0
+  maxHealth: 20
+  currentHealth: 0
+  damage: 20
+  healthBar: {fileID: 235403019}
 --- !u!4 &1031632034708145846
 Transform:
   m_ObjectHideFlags: 0

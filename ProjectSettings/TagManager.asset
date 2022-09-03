@@ -10,6 +10,7 @@ TagManager:
   - Ball
   - Box
   - Door
+  - Boss
   layers:
   - Default
   - TransparentFX

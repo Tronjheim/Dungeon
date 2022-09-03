@@ -8,20 +8,21 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
     public int score;
     public Text scoreText;
-    void Start()
+    void Awake()
     {
         if(Instance== null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+        
     }
     void Update()
     {
         scoreText.text = score.ToString();
     }
-
 }
