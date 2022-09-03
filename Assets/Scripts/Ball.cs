@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     private Enemy enemy;
+    int damage = 20;
      void Start()
     {
         enemy=GetComponent<Enemy>();
@@ -13,7 +14,7 @@ public class Ball : MonoBehaviour
     {
         if (col.CompareTag("Enemy"))
         {
-            enemy.TakeDamage();//hice este cambio
+            TakeDamage();//hice este cambio
             Destroy(gameObject);
             if (enemy.currentHealth <= 0)
             {
@@ -22,5 +23,10 @@ public class Ball : MonoBehaviour
                 Debug.Log(ScoreManager.Instance.score);
             }
         }
+    }
+    public void TakeDamage()// Esta funcion tendria que estar en el script ball?
+    {
+        enemy.currentHealth -= damage;
+        // healthBar.SetHealth(currentHealth);
     }
 }

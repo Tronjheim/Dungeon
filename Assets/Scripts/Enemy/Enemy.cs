@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     public bool attacking;
     public int maxHealth = 20;
     public int currentHealth;
-    public int damage = 20;
+    //public int damage = 20;
     public HealthBar healthBar;// esta mal pero no lo saco para poder compilar
     void Start()
     {
@@ -82,9 +82,9 @@ public class Enemy : MonoBehaviour
         anim.SetBool("Attack", false);
         attacking = false;
     }
-    public void TakeDamage()// Esta funcion tendria que estar en el script ball?
+    /*public void TakeDamage()// Esta funcion tendria que estar en el script ball?
     {
         currentHealth -= damage;
        // healthBar.SetHealth(currentHealth);
-    }
+    }*/
 }
