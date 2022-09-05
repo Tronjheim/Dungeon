@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8267c8c4d6c539148be2584f6a3a72a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuDeath: {fileID: 0}
+  menuDeath: {fileID: 233245298}
 --- !u!4 &49443315
 Transform:
   m_ObjectHideFlags: 0
