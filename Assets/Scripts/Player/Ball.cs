@@ -20,6 +20,7 @@ public class Ball : MonoBehaviour
         else if (col.transform.CompareTag("Boss"))
         {
             col.transform.GetComponent<Enemy>().TakeDamage();
+            col.transform.GetComponent<Enemy>().BossKill();
             Destroy(gameObject);
         }
         

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -88,14 +89,22 @@ public class Enemy : MonoBehaviour
     public void TakeDamage()
     {
         currentHealth -= damage;
-        if(currentHealth <= 0)
+        healthBar.SetHealth(currentHealth);
+        if (currentHealth <= 0)
         {
             Destroy(gameObject);
             ScoreManager.Instance.score += 100;
         }
-        else if (healthBar != null)
+        else if (healthBar == null)
         {
-            healthBar.SetHealth(currentHealth);
+            return;
+        }
+    }
+    public void BossKill()
+    {
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }
